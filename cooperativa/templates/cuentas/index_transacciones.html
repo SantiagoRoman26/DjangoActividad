@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+<head>
+    <meta>
+    <title>Cooperativa 2021</title>
+    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <h4>Lista de Cuentas</h4>
+            <form class="d-flex" method="POST">{% csrf_token %}
+                <input class="form-control" name="busqueda" placeholder="Ingrese su Busqueda" aria-label="busqueda">
+                <button style="margin-left: 10px" class="btn btn-primary" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Saldo</th>
+                <th>Estado</th>
+                <th>Tipo</th>
+                <th>Operacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cuenta in listaCuentas%}
+            <tr>
+                <td><a class="btn btn-secondary" role="button"
+                        href="{% url 'cuenta_cliente' cuenta.numero %}">{{cuenta.numero}}</a></td>
+                <td>{{cuenta.saldo}}</td>
+                <td>{{cuenta.estado}}</td>
+                <td>{{cuenta.tipoCuenta}}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% endblock %}

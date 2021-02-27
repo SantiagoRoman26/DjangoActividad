@@ -1,0 +1,39 @@
+{% extends 'master.html' %}
+{% block contenido %}
+<html>
+
+<head>
+    <meta>
+    <title>Crear Cuenta</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4>Crear Cuenta</h4>
+        <form method="POST"> <input type="hidden" name="csrfmiddlewaretoken"
+                value="dr9pCbk1keRfE9fpZQx6PGwD3Z6rWPYgSprJQyPBHAabmWMgEBkBQWsxFktyaZME">
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_numero">Numero:</label> <input type="text" name="numero" maxlength="20" required=""
+                    id="id_numero"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_tipoCuenta">TipoCuenta:</label> <select name="tipoCuenta" id="id_tipoCuenta">
+                    <option value="ahorros">Ahorros</option>
+
+                    <option value="corriente">Corriente</option>
+
+                    <option value="programado">Programado</option>
+
+                </select></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_saldo">Saldo:</label> <input type="number" name="saldo" step="0.01" required=""
+                    id="id_saldo"></p>
+                    <button type="submit" class="btn btn-info mb-2">Crear Cuenta</button>
+        </form>
+    </div>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'master.html' %}
+{% block contenido %}
+<html>
+
+<head>
+    <meta>
+    <title>Crear cliente</title>
+    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h4>Crear Cliente</h4>
+        <form method="POST"> <input type="hidden" name="csrfmiddlewaretoken"
+                value="4rQxNWwuvWkH5MTaHIFJg2ujSj8oZV54Jp8R1j14SiDDNzq1mtsehiqduEvvd5Ts">
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_cedula">Cedula:</label> <input type="text" name="cedula" maxlength="10" required=""
+                    id="id_cedula"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_apellidos">Apellidos:</label> <input type="text" name="apellidos" maxlength="70"
+                    required="" id="id_apellidos"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_nombres">Nombres:</label> <input type="text" name="nombres" maxlength="70" required=""
+                    id="id_nombres"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_genero">Genero:</label> <select name="genero" id="id_genero">
+                    <option value="femenino">Femenino</option>
+
+                    <option value="masculino">Masculino</option>
+
+                </select></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_estadoCivil">EstadoCivil:</label> <select name="estadoCivil" id="id_estadoCivil">
+                    <option value="soltero">Soltero</option>
+
+                    <option value="casado">Casado</option>
+
+                    <option value="union">Unión Libre</option>
+
+                    <option value="divorciado">Divoraciado</option>
+
+                    <option value="viudo">Viudo</option>
+
+                    <option value="separado">Separado</option>
+
+                </select></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_correo">Correo:</label> <input type="email" name="correo" maxlength="105" required=""
+                    id="id_correo"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_telefono">Telefono:</label> <input type="text" name="telefono" maxlength="15" required=""
+                    id="id_telefono"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_celular">Celular:</label> <input type="text" name="celular" maxlength="15" required=""
+                    id="id_celular"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_direccion">Direccion:</label> <textarea name="direccion" cols="40" rows="10"
+                    maxlength="200" required="" id="id_direccion"></textarea></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_numero">Numero:</label> <input type="text" name="numero" maxlength="20" required=""
+                    id="id_numero"></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_tipoCuenta">TipoCuenta:</label> <select name="tipoCuenta" id="id_tipoCuenta">
+                    <option value="ahorros">Ahorros</option>
+
+                    <option value="corriente">Corriente</option>
+
+                    <option value="programado">Programado</option>
+
+                </select></p>
+            <ul class="errorlist">
+            </ul>
+            <p><label for="id_saldo">Saldo:</label> <input type="number" name="saldo" step="0.01" required=""
+                    id="id_saldo">
+            </p>
+            <button class="btn btn-info mb-2" type="submit">Crear Cliente</button>
+        </form>
+    </div>
+</body>
+
+</html>
+{% endblock %}

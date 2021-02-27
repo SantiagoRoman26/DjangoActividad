@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+{% block contenido %}
+<head>
+    <meta>
+    <title>Cooperativa 2021</title>
+    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <p>
+        <h4>Cliente:</h4> {{cliente.apellidos}} {{cliente.nombres}}</p>
+        <p>
+        <h4>Cedula :</h4> {{cliente.cedula}}</p>
+        <p>
+        <h4>Correo:</h4> {{cliente.correo}}</p>
+        <p>
+        <h4>Nomero de cuenta :</h4>{{cuenta.numero}}</p>
+        <p>
+        <h4>Tipo de Cuenta:</h4> {{cuenta.tipoCuenta}}</p>
+        <p>
+        <h4>Saldo :</h4> {{cuenta.saldo}}</p>
+        <p>
+        <h4>Estado:</h4> {{cuenta.estado}}</p>
+
+
+        <table class="table table-sm" style="width: 100px;">
+            <tr style="border-style: solid;border-width: 1px;">
+                <th style="width: 10px;border-style: solid;border-width: 1px;">Deposito:</th>
+                <th style="border-style: solid;border-width: 1px;"><a
+                        style="margin-left: 10px;background-color: rgb(54, 54, 207); height: 50px; text-align: right;"
+                        class="btn btn-primary" href="{% url 'depositar' cuenta.numero %}" role="button">Deposito</a>
+                </th>
+            </tr>
+            <tr>
+                <th style="width: 10px;border-style: solid;border-width: 1px;">Retiro:</th>
+                <th style="border-style: solid;border-width: 1px;"><a
+                        style="margin-left: 10px;background-color: rgb(54, 54, 207); height: 50px; text-align: right;"
+                        class="btn btn-primary" href="{% url 'retirar' cuenta.numero %}" role="button">Retiro</a></th>
+            </tr>
+
+        </table>
+    </div>
+</body>
+{% endblock %}

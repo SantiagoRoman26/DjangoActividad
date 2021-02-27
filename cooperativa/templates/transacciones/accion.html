@@ -1,0 +1,18 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+<head>
+    <meta>
+    <title>Cooperativa 2021</title>
+    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST">{% csrf_token %}
+            {{formulario.as_p}}
+            <input type="submit" value="Depositar">
+        </form>
+    </div>
+</body>
+{% endblock %}

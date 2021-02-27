@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+<head>
+    <meta>
+    <title>Modificar cliente</title>
+    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h4>Modificar Cuenta</h4>
+        <form method="POST"> {% csrf_token %}
+            {{formulario_cuenta.as_p}}
+            <button type="submit">Modificar Cuenta</button>
+        </form>
+    </div>
+</body>
+{% endblock %}
